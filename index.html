@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <title>Gallery Box</title>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/mmenu.css">
+    <link rel="stylesheet" href="css/hamburgers.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <button id="my-icon" class="hamburger hamburger--collapse" type="button">
+           <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+           </span>
+        </button>
+      </header>
+      <div id="lol">
+        <div class="owl-carousel owl-theme">
+          <img src="assets/img/lf.jpg" width="800" height="480">
+          <img src="assets/img/lf.jpg" width="800" height="480">
+          <img src="assets/img/lf.jpg" width="800" height="480">
+          <img src="assets/img/lf.jpg" width="800" height="480">
+          <img src="assets/img/lf.jpg" width="800" height="480">
+          <img src="assets/img/lf.jpg" width="800" height="480">
+          <img src="assets/img/lf.jpg" width="800" height="480">
+        </div>
+        <section class="setters">
+          <h2>Bippis</h2>
+          <p>
+            Meet the community of inpired content creators.
+          </p>
+          <p>
+            We are SMM professionals.
+          </p>
+          <img src="assets/logo.svg">
+        </section>
+      </div>
+    </main>
+    <nav id="my-menu">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </nav>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.mmenu.all.js"></script>
+    <script>
+       $(document).ready(function() {
+          var $menu = $("#my-menu").mmenu({
+
+          }, {
+            offCanvas: {
+              pageNodetype: "main"
+            }
+          });
+          var $icon = $("#my-icon");
+          var API = $menu.data( "mmenu" );
+
+          $icon.on( "click", function() {
+            API.open();
+          });
+
+          API.bind( "open:finish", function() {
+            setTimeout(function() {
+               $icon.addClass( "is-active" );
+            }, 100);
+          });
+          API.bind( "close:finish", function() {
+            setTimeout(function() {
+               $icon.removeClass( "is-active" );
+            }, 100);
+          });
+          $('.owl-carousel').owlCarousel({
+            autoWidth: true
+          });
+       });
+    </script>
+  </body>
+</html>

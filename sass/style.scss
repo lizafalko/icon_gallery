@@ -1,0 +1,61 @@
+@import 'header';
+
+html,
+body {
+  margin: 0;
+  background: white;
+  font-family: sans-serif;
+}
+
+main {
+  background: white;
+}
+
+.setters {
+  text-align: center;
+
+  h2 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 48px;
+    font-weight: normal;
+    // transition: filter .2s cubic-bezier(.25, .8, .25, 1);
+    transition: filter .2s linear;
+  }
+
+  h2:hover,
+  img:hover {
+    filter:
+      drop-shadow(15px 15px rgba(255, 255, 0, .3))
+      drop-shadow(15px -15px rgba(255, 0, 255, .3))
+      drop-shadow(-15px 15px rgba(0, 255, 255, .3));
+  }
+
+  p {
+    font-family: 'Libre Baskerville', serif;
+  }
+
+  img {
+    margin: 20px 0;
+    transition: filter .2s linear;
+
+  }
+}
+
+.my-library {
+  text-align: center;
+}
+
+.my-library .my-library__item {
+  display: inline-block;
+}
+
+.my-library a {
+  display: inline-block;
+  width: 400px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.my-library img {
+  max-width: 100%;
+}
